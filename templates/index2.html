@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index2.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/index2.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8ad684af4.js" crossorigin="anonymous"></script>
+    <title>TypeCoder</title>
+</head>
+<body>
+    <div class='alertContainer'>
+        <div class="alert" >
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p>That username already exists — try another one!</p>
+            <i class="fa-solid fa-circle-xmark" id='cancel' ></i>
+        </div>
+    </div>
+    <header>
+        <div class="head">
+            <h1 class="gameName">TypeCoder</h1>
+            <button class="Dark_light_btn">
+                <i class="fa-solid fa-sun" id="theme_icon"></i>
+                <span id="Dark_light_btn_label">light</span>
+            </button>
+        </div>
+        <div class="head_main">
+            <div class="discription">
+                <div class="discription_1">
+                    <span>
+                        <div class="dot">
+                            
+                        </div>
+                        <p>Speed Typing for Coders</p>
+                        
+                    </span>
+                </div>
+                <div class="discription_2">
+                    <p class="not_typed">Master your</p>
+                    <p class="typed"><span class="typed_span"></span><span id="cursor">|</span></p>
+                    
+                </div>
+                <div class="discription_3">
+                    Race against the clock. Compete with coders worldwide. Level up your fingers.
+                </div>
+                
+                <button class="discription_btn" >
+                    <a href="#main">
+                    <i class="fa-solid fa-play" ></i>
+                    Start Playing
+                    </a>
+                </button>
+
+            </div>
+            <div class="window_result">
+                <div class="window">
+                    <div class="window_head">
+                        <div class="operations">
+                            <div id="close"> </div>
+                            <div id="minimize"></div>
+                            <div id="maximize"></div>
+                        </div>
+                        <div class="fileName">
+                            main.py
+                        </div>
+                    </div>
+                    <div class="window_body">
+                        <div class="code">
+                            <pre id="line1"><span class="pink">def</span> type_faster(coder):</pre>
+                            <pre id="line2">    <span class="pink">while</span> coder.wpm < <span class="orange">140</span>:</pre>
+                            <pre id="line3">        coder.practice()</pre>
+                            <pre id="line4">        coder.improve()</pre>
+                            <pre id="line5">    <span class="pink">return</span> <span class="green">"Legend 🏆"</span>
+                            </pre>
+                            <pre id="line6">type_faster(you)</pre> 
+                        </div>
+
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="wpm">
+                        <div class="statistic">
+                            <span>120</span>wpm
+                        </div>
+                        <div>
+                            Top Speed
+                        </div>
+                    </div>
+                    <div class="accuracy">
+                        <div class="statistic">
+                            <span>99</span>%
+                        </div>
+                        <div>
+                            Accuracy
+                        </div>
+                    </div>
+                    
+                    <div class="difficulties">
+                        <div class="statistic">
+                            <span>4</span>
+                        </div>
+                        <div>
+                            Difficulties
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+       <div class="form">
+            <div class="form_head">
+                <h1>Ready to play?</h1>
+                <p>Choose your name and difficulty to begin</p>
+            </div>
+            <form action="/game" method="post" id='form' >
+                <div class="Username_section">
+                    <label for="Username">
+                        <i class="fa-solid fa-user"></i>
+                        Username
+                    </label>
+                    <input type="text" id="Username" name="Username" placeholder="e.g CodeMaster123" autocomplete="off" maxlength="20">
+                    <div class="nameError"></div>
+                </div>
+                <div class="Difficulty_section">
+                    <label class="difficulty_head" for="difficulty">
+                        <i class="fa-solid fa-gauge-high" ></i>
+                        Difficulty
+                    </label>
+                    <div class="difficulty_grid">
+                        <label class="difficulty_card">
+                            <input type="radio" name="difficulty" id="easy" value="easy">
+                            <span class="emoji">😊</span>
+                            <span class="difficulty_name">Easy</span>
+                        </label>
+                        <label class="difficulty_card">
+                            <input type="radio" name="difficulty" id="medium" value="medium" checked>
+                            <span class="emoji">🔥</span>
+                            <span class="difficulty_name">Medium</span>
+                        </label>
+                        <label class="difficulty_card">
+                            <input type="radio" name="difficulty" id="hard" value="hard">
+                            <span class="emoji">💀</span>
+                            <span class="difficulty_name">Hard</span>
+                        </label>
+                        <label class="difficulty_card">
+                            <input type="radio" name="difficulty" id="asian" value="asian">
+                            <span class="emoji">🐉</span>
+                            <span class="difficulty_name">asian</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="Submit_section" type="submit">
+                    <span id="btn_txt">
+                        <i class="fa-solid fa-keyboard" style="color: rgb(0, 0, 0);"></i>
+                        let's Go!
+                    </span>
+                    <span id="btn_load" hidden>
+                        <i class="fa-solid fa-spinner fa-spin" style="color: rgb(0, 0, 0);"></i>
+                        checking...
+                    </span>
+
+                    
+                </button>
+            </form>   
+       </div>
+       <div class="leaderboard">
+            <div class="leaderboard_head">
+                <h2>🏆Leaderboard</h3>
+                <p>Top 10 coders of all time</p>
+            </div>
+            <div class="podium">
+                <div class="second">
+                    <div class="section_1">
+                        <div class="logo " id='lg2'>
+                            D
+                        </div>
+                        <div class="name" id='na2'>
+                            abdo
+                        </div>
+                        <div class="podium_score" id='sc2'>
+                            212190
+                        </div>
+                    </div>
+                    <div class="section_2">2</div>
+                </div>
+                <div class="first">
+                    <div class="section_1">
+                        <div class="first_icon">👑</div>
+                        <div class="logo" id='lg1'>
+                            D
+                        </div>
+                        <div class="name" id='na1'>
+                            abdo
+                        </div>
+                        <div class="podium_score" id='sc1'>
+                            212190
+                        </div>
+                    </div>
+                    <div class="section_2">1</div>
+                </div>
+                <div class="third">
+                    <div class="section_1">
+                        <div class="logo" id='lg3'>
+                            D
+                        </div>
+                        <div class="name" id='na3'>
+                            abdo
+                        </div>
+                        <div class="podium_score" id='sc3'>
+                            212190
+                        </div>
+                    </div>
+                    <div class="section_2">3</div>
+                </div>
+                
+            </div>
+            <div class="leaderboard_section2">
+                <!--
+                <div class="row">
+                    <div class="info">
+                        <div class="rank">
+                            #4
+                        </div>
+                        <div class="leaderboard_section2_logo">
+                            E
+                        </div>
+                        <div class="leaderboard_section2_userName">
+                            ALi
+                        </div>
+                    </div>
+                    <div class="leaderboard_section2_score">
+                        <span>
+                            ⭐ 450
+                        </span>
+                    </div>
+                </div>
+                -->
+            </div>
+       </div> 
+    </main>
+    <footer>
+        <div class="TypeCoder_footer">
+            <h1>TypeCoder</h1>
+            <div>Speed typing for coders, by coders.</div>
+            <div>&copy; TypeCoder 2026</div>
+        </div>
+        <div class="Contact">
+            <h3>Contact</h3>
+            <div><a href="mailto:TypeCoder@gmail.com">TypeCoder@gmail.com</a></div>
+            <div><a href="tel:+000-000-0000">000-000-0000</a></div>
+        </div>
+        <div class="Address">
+            <h3>Address</h3>
+            <div>
+<pre>
+ENSAM — Rabat
+Av. des Forces Armées Royales
+Rabat 10100, Morocco
+</pre>
+            </div>
+        </div>
+        <div class="Links">
+            <h3>Links</h3>
+            <div><a href="#">About Us</a></div>
+            <div><a href="#">Privacy Policy</a></div>
+        </div>
+    </footer>
+</body>
+<script src="/static//script/index2.js"></script>
+</html>

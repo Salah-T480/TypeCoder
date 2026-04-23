@@ -1,0 +1,188 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+}
+.gameOver{
+    background: black;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+.gameOverContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 6rem;
+    font-weight: bold;
+    transform: rotateZ(-45deg);    
+    
+    width: 100%;
+    
+    text-align: center;
+    position: absolute;
+    left: -35%;
+    top: 10%;
+    box-shadow: 5px 5px 120px rgb(143, 143, 143);
+    
+}
+#gameOver1{
+    background-color: #ff2828;
+    width: 210vw;
+    border: 3px solid;
+    text-shadow: 5px 5px 5px rgb(229, 181, 181);
+}
+#gameOver2{
+    background-color: #ff2828;
+    margin-top: 10px;
+    width: 220vw;
+    border: 3px solid;
+    text-shadow: 5px 5px 5px rgb(229, 181, 181);
+
+}
+#homePage,#playAgain{
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    height: 10%;
+    width: 20%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.4rem;
+    background-color: transparent;
+    color: #e13333;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgb(127, 127, 127) ;
+}
+#playAgain{
+    bottom: 30%;
+}
+.game{
+    margin: 0;
+    background: linear-gradient(45deg,#f8ad00,#e13333,#3992ff);
+    background-repeat: no-repeat;
+    padding: 5px;
+    height: 100vh;
+    display: block;
+    
+}
+.container{
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+   
+}
+
+.gameArea{
+    border: 3px solid;
+    height: 85%;
+    background-color: #c1ff72;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lives{
+    
+    position: absolute;
+    left: 20px;
+    top: 1px;
+    
+}
+
+i{
+    font-size: 25px;
+    margin: 2px;
+    text-shadow: 3px 3px 5px black;
+    color: #ff2828;
+}
+.modeAbdellah{
+    height: 20px;
+    border: 2px solid;
+    position: absolute;
+    width: 60vh;
+    right: 10px;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black;
+    background-color: aliceblue;
+}
+.info{
+    border: 3px solid;
+    height: 14%;
+    border-radius: 30px;
+    background-color: #ffde59;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.score{
+    height: 100%;
+    width: 20%;
+    text-align: center;
+    font-family: "Playwrite NZ Basic";
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(190, 7, 50);
+}
+.wordsInput{
+    height: 100%;
+    background: linear-gradient(90deg,#5de0e6,#004aad);
+    border: 2px solid black;
+    border-radius: 50px;
+    width: 60%;
+    text-align: center;
+    font-family:"Playwrite NZ Basic";
+    font-size: 2rem;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.accuracy{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-family: "Playwrite NZ Basic";
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(190, 7, 50);
+}
+
+.values{
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: black;
+}
+
+.easy{
+    background: linear-gradient(to right,#0ae30a,white);
+}
+.medium{
+    background: linear-gradient(to right,#0ae30a ,rgb(255, 166, 0) ,white ) ;
+}
+.hard{
+    background: linear-gradient(to right,#0ae30a ,rgb(255, 166, 0),red ,white ) ;
+}
+.asian{
+    background: linear-gradient(to right,#0ae30a ,rgb(255, 166, 0),red ,purple  ,white ) ;
+}
+
+.SpanFallingWord{
+    font-size:2rem;
+    position: absolute;
+    top: 0;
+    
+    display:inline;
+    font-family: "Playwrite NZ Basic";
+    text-shadow: 5px 5px 5px black;
+}

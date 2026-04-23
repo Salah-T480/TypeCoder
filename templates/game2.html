@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f8ad684af4.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/game2.css">
+    <title>TypeCoder</title>
+</head>
+<body   data-player="{{player_name}}"
+        data-difficulty="{{difficulty}}"
+    >
+
+    <div class="gameOver" id="screenGameover">
+        <div class="go_bg_txt">
+            GAME OVER
+        </div>
+        <div class="container">
+            <div class="containerTitle">
+                <span>Game</span>
+                <span>Over</span>
+            </div>
+            <div class="containerResults">
+                <div class="result_unit">
+                    <div class="result_unit_num" id="goWpm" >
+                        0
+                    </div>
+                    <div class="result_unit_name" >
+                        WPM
+                    </div>
+                </div>
+                <div class="result_unit">
+                    <div class="result_unit_num" id="goAccuracy">
+                        0
+                    </div>
+                    <div class="result_unit_name">
+                        ACCURACY
+                    </div>
+                </div>
+                <div class="result_unit">
+                    <div class="result_unit_num" id="goStreak">
+                        0
+                    </div>
+                    <div class="result_unit_name">
+                        STREAK
+                    </div>
+                </div>
+                <div class="result_unit">
+                    <div class="result_unit_num" id="goScore">
+                        0
+                    </div>
+                    <div class="result_unit_name">
+                        SCORE
+                    </div>
+                </div>
+            </div>
+            <div class="containerControls">
+                <button id="playAgain">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Play Again</button>
+                <button id="home" >
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="game" id="screenGame">
+        <header>
+            <div class="title">
+                <p>TypeCoder 
+                    <span class="difficulty" id="header_diff">
+                        EASY
+                    </span>
+                </p>
+            </div>
+            <div class="lives">
+                <div class="life_line">
+                    <div class="lives-bar-fill" id="lives-bar-fill"></div>
+                </div>
+                <div class="life_heart" id="life_heart">
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                </div>
+            </div>
+            <div class="states">
+                <div class="state_unit">
+                    <div class="numeric" id="statScore">0</div>
+                    <div class="state_title">SCORE</div>
+                </div>
+                <div class="state_unit wpm">
+                    <div class="numeric " id="statWpm">0</div>
+                    <div class="state_title">WPM</div>
+                </div>
+                <div class="state_unit">
+                    <div class="numeric" id="statAccuracy">100%</div>
+                    <div class="state_title">ACCURACY</div>
+                </div>
+                <div class="state_unit streak">
+                    <div class="numeric " id="statStreak">×1</div>
+                    <div class="state_title">STREAK</div>
+                </div>
+                <div class="state_unit">
+                    
+                </div>
+            </div>
+        </header>
+        <main class="gameArea" id="gameArea">
+            <div class="combo-popup" id="comboPopup"></div>
+        </main>
+        <footer>
+            <div class="input_field">
+                <div class="input_field_section1">
+                    <div class="keyboard">
+                        <i class="fa-solid fa-keyboard" ></i>
+                    </div>
+                    <input type="text" placeholder="type the word..." autofocus id="wordInput">
+                </div>
+                    <div class="tips">
+                    <p>Press <span>Esc</span> to clear</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="../static/script/game2.js"></script>
+</html>

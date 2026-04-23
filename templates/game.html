@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8ad684af4.js" crossorigin="anonymous"></script>
+    <title>Game Page</title>
+</head>
+<body>
+
+
+
+    <audio  id="gameAudio" autoplay loop src="/static/audio/game.mp3"  hidden="true"> </audio>
+    <div class="gameOver" >
+        <div class="gameOverContainer">
+            <div id="gameOver1">Game</div>
+            <div id="gameOver2">Over</div>
+        </div>
+        <a href="/"><button id="homePage">Home Page</button></a>
+        <button onclick="PlayAgain()" id="playAgain">Play Again</button>
+    </div>
+    <div class="game">
+        <div class="container">
+            <div class="gameArea">
+                <div class="lives">
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                    <i class="fa-solid fa-heart" ></i>
+                </div>
+                <div class="modeAbdellah">
+
+                </div>
+            </div>
+            <div class="info">
+                <div class="score">
+                    Score 
+                    <span class="values">0</span>
+                </div>
+                
+                <input class="wordsInput" type="text" placeholder="enter word" name="input" id="input" autofocus="true" autocomplete="off">
+                
+                <div class="accuracy">
+                    Accuracy
+                    
+                    <span class="values">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="/static/script/game.js"></script>
+</html>

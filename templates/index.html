@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/css/index.css"> 
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8ad684af4.js" crossorigin="anonymous"></script>
+
+
+
+    <title>TypeCoder</title>
+</head>
+<body>
+    {% block warning %}
+    {% endblock warning %}
+    <div class="principle">
+        <div class="navBar">
+            <h1>TypeCoder</h1>
+            <button>Dark Mode</button>
+        </div>
+        <div class="content">
+            <div class="image">
+                
+                <!--<img id="sun" src="../static/img/radiant-sun2.png" alt="sun image"> -->
+            </div>
+            <div class="description">
+               <!--  <h1>
+                    An application for  mastering your <br> typing in <span> Coding</span>
+                </h1> -->
+                <h1>
+                    Speed Typing for Coders!
+                </h1>
+                <a href="#name" ><button>Start Play</button></a>
+            </div>
+        </div>
+        <div class="clouds">
+            <div class="cloud3"></div>
+            <div class="cloud2"></div>
+            <div class="cloud1"></div>
+        </div>
+    </div>
+    <div class="main" id="main">
+        <div class="inputField">
+            <div class="description_inputField">
+                <h2>
+                    To Start playing please enter your name then select the difficulty level in the bellow area 
+                </h2>
+                <p> 
+                    Enjoy your time!
+                </p>
+            </div>
+            <div class="images"></div>
+            <div class="inputArea">
+                <form action="/game" id="form" method="post">
+                    <div class="name">
+                        <label for="name" id="Label_name">User Name</label>
+                    <input type="text" name="name" id="name" maxlength="20" placeholder="Enter your username (e.g., CodeMaster123)" required  >
+                    </div>
+                    <div class="mode">
+                        <label for="difficulty">difficulty</label>
+                        <select name="difficulty" id="difficulty">
+                            
+                                <option value="easy">😊 Easy</option>
+                                <option value="medium">🔥 Medium</option>
+                                <option value="hard">💀 Hard</option>
+                                <option value="asian">🐉 Asian</option>
+                    
+                        </select>
+                    </div>
+                    <input type="submit" value="Play" id="submit" onclick="getNameLevel()">
+                </form>
+            </div>
+        </div>
+        <div class="leaderboard">
+            <h1>Leaderboard</h1>
+            <hr width="99%">
+            <div class="mainStage">
+                <div class="firstPerson">
+                    <div class="log1"></div>
+                    <div class="name1"></div>
+                    <div class="score1"></div>
+                </div>
+                <div class="secondPerson">
+                    <div class="log2"></div>
+                    <div class="name2"></div>
+                    <div class="score2"></div>
+                </div>
+                <div class="thirdPerson">
+                    <div class="log3"></div>
+                    <div class="name3"></div>
+                    <div class="score3"></div>
+                </div>
+                <div class="stage">
+                    <div class="second">2</div>
+                    <div class="first">1</div>
+                    <div class="third">3</div>
+                </div>
+            </div>
+            <div class="list">
+                <ol start="4" id="olList">
+                    <!-- 
+                    <li>
+                        <div class="rank">#4</div>
+                        <div class="LogName">
+                            <div class="log">M</div>
+                            <div class="name">terminature</div>
+                        </div>
+                        <div class="score">
+                            <i class="fa-solid fa-star" style="color: rgba(255, 212, 59, 1);"></i>
+                            <span>86263536</span>
+                        </div>
+                    </li> 
+                    -->
+                    
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="contact">
+            <p><b>CONTACT</b></p>
+            <p><a href="mailto:TypeCoder@gmail.com">TypeCoder@gmail.com</a></p> 
+            <p>Phone: <a href="tel:000-000-0000">000-000-0000</a></p>   
+            <p>Toll Free: <a href="tel:0-000-000-0000">0-000-000-0000</a></p>
+            <p>Fax: <a href="tel:0-000-000-0000">0-000-000-0000</a></p>
+        </div>
+        <div class="address">
+            <p><b>&copy;TypeCoder - 2026</b></p>
+            <address>ENSAM - High National School of Arts and Crafts Rabat <br> 6207 Av. des Forces Armées Royales, Rabat 10100, Morocco </address>
+            <hr color="white">
+            <p>If you have any questions about the program, you may reach out to us at</p>
+            <p><a href="mailto:TypeCoder@gmail.com" >TypeCoder@gmail.com</a></p>
+        </div>
+        
+        <div class="links">
+            <p><b>Links</b></p>
+            <hr width="100px" color="white">
+            <p><a href="#">About Us</a></p>
+            
+        </div>
+    </div>  
+</body>
+<!-- <script src="/static/script/index.js"></script> -->
+<script src="{{url_for("static",filename='script/index.js')}}"></script>
+</html>
